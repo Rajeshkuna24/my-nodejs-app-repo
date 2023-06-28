@@ -1,0 +1,27 @@
+name: Mirror to AWS CodeCommit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Git
+        run: sudo apt-get update && sudo apt-get install git -y
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "kuna.rajesh24.rk+github@gmail.com"
+
+      - name: Push to AWS CodeCommit
+        run: |
+          git remote add codecommit https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/my-nodejs-app-repo
+          git push codecommit HEAD:main --force
