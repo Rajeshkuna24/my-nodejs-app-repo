@@ -15,6 +15,6 @@ jobs:
           target_repo_url:
             ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/my-nodejs-app-repo
           ssh_private_key:
-            AKIA6LEM665OWW53CCMP
-          ssh_username:                                 # <-- (for codecommit) you need to specify ssh-key-id as ssh username.
             /Yja3wsJ+z9I0NJRexwg6Myda5P34NuQU3AEfc74
+          ssh_username:                                 # <-- (for codecommit) you need to specify ssh-key-id as ssh username.
+            AKIA6LEM665OWW53CCMP
