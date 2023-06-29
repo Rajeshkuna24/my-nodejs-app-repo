@@ -18,8 +18,9 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "kuna.rajesh24.rk+github@gmail.com"
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
 
       - name: Push to AWS CodeCommit
         run: |
